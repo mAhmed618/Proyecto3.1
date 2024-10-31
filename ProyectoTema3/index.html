@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Datos Personales</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Por favor, Introduce los datos solicitados</h1>
+    <form name="personal_data" method="post" action="process_form.php" id="personal_data">
+        <fieldset>
+            <legend>Datos Personales</legend>
+
+            <p>
+                <label for="nombre">Nombre:</label>
+                <input type="text" size="22" placeholder="Obligatorio" id="nombre" name="nombre" pattern="[A-Za-z\-]+" required autofocus>
+            </p>
+
+            <p>
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" size="50" placeholder="obligatorio" id="apellidos" name="apellidos" pattern="[A-Za-z\-]+" required>
+            </p>
+
+            <!-- Sección de Edad con disposición horizontal -->
+            <fieldset class="horizontal-options">
+                <legend>Edad:</legend>
+                <label>
+                    <input type="radio" id="edad_18_25" name="edad" value="18-25" required>
+                    18 a 25
+                </label>
+                <label>
+                    <input type="radio" id="edad_26_35" name="edad" value="26-35">
+                    26 a 35
+                </label>
+                <label>
+                    <input type="radio" id="edad_36_45" name="edad" value="36-45">
+                    36 a 45
+                </label>
+                <label>
+                    <input type="radio" id="edad_46_55" name="edad" value="46-55">
+                    46 a 55
+                </label>
+                <label>
+                    <input type="radio" id="edad_56_plus" name="edad" value="56+">
+                    Mayor de 55
+                </label>
+                <label>
+                    <input type="radio" id="edad_ns_nc" name="edad" value="ns-nc">
+                    NS/NC
+                </label>
+            </fieldset>
+            <fieldset class="fieldset1">
+                <legend>Intereses:</legend>
+                <label>
+                    <span>Arte y Literatura</span>
+                    <input type="checkbox" id="arte_literatura" name="interes" value="Arte y Literatura">
+                </label>
+                <label>
+                    <span>Ciencia y Tecnología</span>
+                    <input type="checkbox" id="ciencia_tecnologia" name="interes" value="Ciencia y Tecnología">
+                </label>
+                <label>
+                    <span>Política y Sociedad</span>
+                    <input type="checkbox" id="politica_sociedad" name="interes" value="Política y Sociedad">
+                </label>
+                <label>
+                    <span>Ocio y Deporte</span>
+                    <input type="checkbox" id="ocio_deporte" name="interes" value="Ocio y Deporte">
+                </label>
+                <label>
+                    <span>Cine y Televisión</span>
+                    <input type="checkbox" id="cine_tv" name="interes" value="Cine y Televisión">
+                </label>
+            </fieldset>
+            <p>
+                <label for="codigo_postal">Código Postal:</label>
+                <input type="text" size="6" id="codigo_postal" name="codigo_postal" pattern="[0-9]{5}" required>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Otros Datos</legend>
+
+            <!-- Sección de Color Favorito con disposición horizontal -->
+            <p>
+                <label for="color_favorito"><h2>Color Favorito:</h2></label><br>
+            </p>
+            <div class="horizontal-options">
+                <label>
+                    <input type="radio" id="rojo" name="color_favorito" value="rojo" required>
+                    Rojo
+                </label>
+                <label>
+                    <input type="radio" id="azul" name="color_favorito" value="azul">
+                    Azul
+                </label>
+                <label>
+                    <input type="radio" id="amarillo" name="color_favorito" value="amarillo">
+                    Amarillo
+                </label>
+                <label>
+                    <input type="radio" id="verde" name="color_favorito" value="verde">
+                    Verde
+                </label>
+            </div>
+
+            <!-- Sección de Asignaturas con checkbox antes del nombre y disposición vertical -->
+            <div>
+                <p>
+                    <label for="color_favorito"><h2>Asignaturas Favoritas:</h2></label><br>
+                </p>
+                <label>
+                    <input type="checkbox" id="dwec" name="asignatura" value="DWEC">
+                    <span>DWEC</span>
+                </label>
+                <label>
+                    <input type="checkbox" id="dwes" name="asignatura" value="DWES">
+                    <span>DWES</span>
+                </label>
+                <label>
+                    <input type="checkbox" id="diw" name="asignatura" value="DIW" checked>
+                    <span>DIW</span>
+                </label>
+                <label>
+                    <input type="checkbox" id="daw" name="asignatura" value="DAW">
+                    <span>DAW</span>
+                </label>
+                <label>
+                    <input type="checkbox" id="eiem" name="asignatura" value="EIEM">
+                    <span>EIEM</span>
+                </label>
+
+            <p>
+                <label for="probabilidad_aprobar"><h2>Probabilidad de Aprobar (%):</h2></label>
+                Porcentaje :<input type="number" id="probabilidad_aprobar" name="probabilidad_aprobar" min="0" max="100" value="50" required>
+            </p>
+        </fieldset>
+
+        <p>
+            <input type="submit" value="Enviar Formulario">
+            <input type="reset" value="Reiniciar Formulario">
+        </p>
+    </form>
+</body>
+</html>
